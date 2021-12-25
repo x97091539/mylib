@@ -16,6 +16,15 @@ public class LibFunc {
         return psd;
     }
 
+    public static String getString(long imei,int sdk,String key){
+        StringBuilder sb = new StringBuilder();
+        sb.append("1234567890ABCDEF").append(key);
+        byte[] bArr = sb.toString().getBytes();
+        String psd = getMessageDigest(bArr);
+        psd = psd.substring(0, 7);
+        return psd;
+    }
+
     public final static String getMessageDigest(byte[] bArr) {
         char[] cArr = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         try {
